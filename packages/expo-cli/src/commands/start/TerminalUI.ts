@@ -1,3 +1,6 @@
+import chalk from 'chalk';
+import openBrowser from 'react-dev-utils/openBrowser';
+import wrapAnsi from 'wrap-ansi';
 import {
   Android,
   Exp,
@@ -9,10 +12,7 @@ import {
   UserManager,
   UserSettings,
   Webpack,
-} from '@expo/xdl';
-import chalk from 'chalk';
-import openBrowser from 'react-dev-utils/openBrowser';
-import wrapAnsi from 'wrap-ansi';
+} from 'xdl';
 
 import { loginOrRegisterIfLoggedOutAsync } from '../../accounts';
 import Log from '../../log';

@@ -1,6 +1,19 @@
 import bunyan from '@expo/bunyan';
 import { setCustomConfigPath } from '@expo/config';
 import simpleSpinner from '@expo/simple-spinner';
+import boxen from 'boxen';
+import chalk from 'chalk';
+import program, { Command } from 'commander';
+import fs from 'fs';
+import getenv from 'getenv';
+import leven from 'leven';
+import findLastIndex from 'lodash/findLastIndex';
+import ora from 'ora';
+import path from 'path';
+import ProgressBar from 'progress';
+import stripAnsi from 'strip-ansi';
+import url from 'url';
+import wrapAnsi from 'wrap-ansi';
 import {
   Analytics,
   Api,
@@ -16,20 +29,7 @@ import {
   ProjectSettings,
   ProjectUtils,
   UserManager,
-} from '@expo/xdl';
-import boxen from 'boxen';
-import chalk from 'chalk';
-import program, { Command } from 'commander';
-import fs from 'fs';
-import getenv from 'getenv';
-import leven from 'leven';
-import findLastIndex from 'lodash/findLastIndex';
-import ora from 'ora';
-import path from 'path';
-import ProgressBar from 'progress';
-import stripAnsi from 'strip-ansi';
-import url from 'url';
-import wrapAnsi from 'wrap-ansi';
+} from 'xdl';
 
 import { AbortCommandError, SilentError } from './CommandError';
 import { loginOrRegisterAsync } from './accounts';
